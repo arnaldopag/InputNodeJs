@@ -1,6 +1,11 @@
 let numerosString = process.argv.slice(2);
 
-for (let i = 0; i <= numerosString.length; i++) {
-    let numeros = parseInt(numerosString);
-    console.log(numeros);
-}
+let soma = numerosString.reduce(function (valoraAnterior, item) {
+    let numero = parseInt(item);
+    if (numero % 2 == 0) {
+        return valoraAnterior + parseInt(item);
+    } else {
+        return valoraAnterior;
+    }
+}, 0);
+console.log(soma);
